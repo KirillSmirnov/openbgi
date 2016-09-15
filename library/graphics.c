@@ -306,6 +306,7 @@ static void updateFont()
     lf.lfEscapement = 900;
   lf.lfWeight = (int)((textSetting.charsize + 8) * userSize.mx);
   lf.lfHeight = (int)((textSetting.charsize + 10) * userSize.my);
+  lf.lfCharSet = DEFAULT_CHARSET;
   selectObject(CreateFontIndirect(&lf), 1);
   
   if(textSetting.direction == HORIZ_DIR && textSetting.horiz == LEFT_TEXT)
