@@ -8,7 +8,7 @@ CFLAGS = -O2 -Wall
 SRCS = bgi.c server.c client.c ipc.c graphics.c
 OBJS = bgi.o server.o client.o ipc.o graphics.o
 
-openbgi.a: $(OBJS)
+libopenbgi.a: $(OBJS)
 	$(AR) rvu $@ $(OBJS)
 	$(RANLIB) $@
 
