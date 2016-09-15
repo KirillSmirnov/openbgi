@@ -17,10 +17,10 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "BGI.H"
-#include "IPC.h"
+#include "bgi.h"
+#include "ipc.h"
 #include <stdio.h>
-#include <Windows.h>
+#include <windows.h>
 
 RGBQUAD * BGI_palette = NULL;
 RGBQUAD BGI_default_palette[16] = 

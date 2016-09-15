@@ -17,8 +17,8 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "BGI.h"
-#include "IPC.h"
+#include "bgi.h"
+#include "ipc.h"
 #include "graphics.h"
 #include <stdio.h>
 #include <assert.h>

@@ -21,9 +21,9 @@
   #define _WIN_VER 0x500
 #endif
 
-#include <Windows.h>
+#include <windows.h>
 
-#include "BGI.h"
+#include "bgi.h"
 #include "graphics.h"
 
 #define _USE_MATH_DEFINES

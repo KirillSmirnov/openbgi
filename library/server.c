@@ -18,7 +18,7 @@
 */
 
 #include "bgi.h"
-#include "IPC.h"
+#include "ipc.h"
 #include "graphics.h"
 #include <assert.h>
 #include <stdio.h>
