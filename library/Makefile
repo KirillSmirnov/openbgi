@@ -16,4 +16,4 @@ $(OBJS): $(SRCS)
 	$(CC) $(CFLAGS) -c $(SRCS)
 
 clean:
-	$(RM) *.o
+	$(RM) *.o *.a
