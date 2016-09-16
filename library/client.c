@@ -63,15 +63,16 @@ static void serverPresenceChecker()
 }
 
 /* Server-thread. Is used if we use MODE_RELEAS */
-static void serverThread(DWORD p)
+static DWORD WINAPI serverThread(LPVOID p)
 {
-  BGI_server(p);
+  BGI_server((DWORD)p);
+  return 0;
 }
 
 LPVOID static packParams(int w, int h, int mode)
 {
   int r = ((w & 0xFFF) | ((h & 0xFFF) << 12)) + ((mode & 0xFFF) << 24);
-#ifdef _Wp64  
+#ifdef _WIN64
   return (LPVOID)(__int64)r;
 #else
   return (LPVOID)(long)r;
@@ -90,7 +91,7 @@ void BGI_startServer(int width, int height, int mode)
   sharedObjects.serverCreatedEvent = IPC_createEvent(SERVER_STARTED_EVENT_NAME);
   if(mode & MODE_RELEASE)
   {
-    CreateThread(NULL,  0, (LPTHREAD_START_ROUTINE)serverThread, (LPVOID)packParams(width, height, mode), 0, 0);
+    CreateThread(NULL,  0, serverThread, packParams(width, height, mode), 0, 0);
   }
   else
   {
